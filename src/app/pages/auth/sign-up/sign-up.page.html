@@ -1,0 +1,46 @@
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <app-custom-input
+      autocomplete="name"
+      icon="person-add-outline"
+      [control]="nameControl"
+      type="text"
+      placeholder="Nombre">
+    </app-custom-input>
+
+    <div class="validators" *ngIf="nameControl.errors && nameControl.touched">
+      <div *ngIf="nameControl.errors?.['required']">Indicar un nombre</div>
+      <div *ngIf="nameControl.errors?.['minlength']">El nombre debe tener al menos 4 caracteres</div>
+    </div>
+
+    <app-custom-input
+      autocomplete="email"
+      icon="mail-outline"
+      [control]="emailControl"
+      type="email"
+      placeholder="Correo electrónico">
+    </app-custom-input>
+
+    <div class="validators" *ngIf="emailControl.errors && emailControl.touched">
+      <div *ngIf="emailControl.errors?.['required']">El correo es requerido</div>
+      <div *ngIf="emailControl.errors?.['email']">Ingrese un correo válido</div>
+    </div>
+
+    <app-custom-input
+      [control]="passwordControl"
+      icon="lock-closed-outline"
+      type="password"
+      placeholder="Contraseña">
+    </app-custom-input>
+
+    <div class="validators" *ngIf="passwordControl.errors && passwordControl.touched">
+      <div *ngIf="passwordControl.errors?.['required']">La contraseña es requerida</div>
+    </div>
+
+    <ion-button expand="block" type="submit" [disabled]="form.invalid">
+      Registrarse
+    </ion-button>
+
+  </form>
+</ion-content>
