@@ -17,4 +17,4 @@ import { HomePageRoutingModule } from './home-routing.module';
   ],
   declarations: [HomePage]
 })
-export class Tab1PageModule {}
+export class HomePageModule {}

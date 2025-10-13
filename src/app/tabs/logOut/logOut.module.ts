@@ -17,4 +17,4 @@ import { LogOutPageRoutingModule } from './logOut-routing.module';
   ],
   declarations: [LogOutPage]
 })
-export class Tab4PageModule {}
+export class LogOutPageModule {}

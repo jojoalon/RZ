@@ -17,4 +17,4 @@ import { BusquedaPageRoutingModule } from './busqueda-routing.module';
   ],
   declarations: [BusquedaPage]
 })
-export class Tab2PageModule {}
+export class BusquedaPageModule {}
