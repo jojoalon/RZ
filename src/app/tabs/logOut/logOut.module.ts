@@ -2,10 +2,10 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab4Page } from './tab4.page';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { LogOutPage } from './logOut.page';
+import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 
-import { Tab4PageRoutingModule } from './tab4-routing.module';
+import { LogOutPageRoutingModule } from './logOut-routing.module';
 
 @NgModule({
   imports: [
@@ -13,8 +13,8 @@ import { Tab4PageRoutingModule } from './tab4-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab4PageRoutingModule
+    LogOutPageRoutingModule
   ],
-  declarations: [Tab4Page]
+  declarations: [LogOutPage]
 })
 export class Tab4PageModule {}
