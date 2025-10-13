@@ -13,7 +13,7 @@ const routes: Routes = [
       },
       {
         path: 'tab2',
-        loadChildren: () => import('./busqueda/tab2.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('./busqueda/busqueda.module').then(m => m.Tab2PageModule)
       },
       {
         path: 'tab3',
