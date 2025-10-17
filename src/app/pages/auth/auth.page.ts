@@ -57,7 +57,7 @@ export class AuthPage implements OnInit {
         email: user.email
       });
 
-      this.utilsSvc.routerLink('/tabs/tab1');
+      this.utilsSvc.routerLink('/tabs');
       this.form.reset();
 
       this.utilsSvc.presentToast({

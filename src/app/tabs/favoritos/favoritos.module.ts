@@ -2,10 +2,10 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { LogoutPage } from './logout.page';
+import {FavoritosPage} from './favoritos.page';
 import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 
-import { LogoutPageRoutingModule } from './logout-routing.module';
+import { FavoritosPageRoutingModule } from './favoritos-routing.module';
 
 @NgModule({
   imports: [
@@ -13,8 +13,8 @@ import { LogoutPageRoutingModule } from './logout-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    LogoutPageRoutingModule
+    FavoritosPageRoutingModule
   ],
-  declarations: [LogoutPage]
+  declarations: [FavoritosPage]
 })
-export class LogoutPageModule {}
+export class FavoritosPageModule {}

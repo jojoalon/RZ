@@ -9,31 +9,39 @@ const routes: Routes = [
     children: [
       {
         path: 'home',
-        loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+        loadChildren: () =>
+          import('./home/home.module').then((m) => m.HomePageModule),
       },
       {
         path: 'busqueda',
-        loadChildren: () => import('./busqueda/busqueda.module').then(m => m.BusquedaPageModule)
+        loadChildren: () =>
+          import('./busqueda/busqueda.module').then(
+            (m) => m.BusquedaPageModule
+          ),
       },
       {
         path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        loadChildren: () =>
+          import('./favoritos/favoritos.module').then(
+            (m) => m.FavoritosPageModule
+          ),
       },
-       {
+      {
         path: 'logout',
-        loadChildren: () => import('./logOut/logOut.module').then(m => m.LogOutPageModule)
+        loadChildren: () =>
+          import('./logout/logout.module').then((m) => m.LogoutPageModule),
       },
       {
         path: '',
         redirectTo: 'home',
-        pathMatch: 'full'
-      }
-    ]
-  }
+        pathMatch: 'full',
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class TabsPageRoutingModule {}

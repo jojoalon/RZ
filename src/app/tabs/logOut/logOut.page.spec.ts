@@ -3,19 +3,19 @@ import { IonicModule } from '@ionic/angular';
 
 import { ExploreContainerComponentModule } from '../../explore-container/explore-container.module';
 
-import { LogOutPage } from './logOut.page';
+import { LogoutPage } from './logout.page;
 
-describe('LogOutPage', () => {
-  let component: LogOutPage;
-  let fixture: ComponentFixture<LogOutPage>;
+describe('LogoutPage', () => {
+  let component: LogoutPage;
+  let fixture: ComponentFixture<LogoutPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LogOutPage],
+      declarations: [LogoutPage],
       imports: [IonicModule.forRoot(), ExploreContainerComponentModule]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(LogOutPage);
+    fixture = TestBed.createComponent(LogoutPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -10,3 +10,9 @@
     padding: 16px;
 
   }
+
+
+ion-content {
+    /* Degradado Radial */
+    --background: radial-gradient(circle at center, #000000, #01300f);
+}

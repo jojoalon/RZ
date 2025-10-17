@@ -1,15 +1,47 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Búsqueda </ion-title>
+    <ion-title>Busqueda de Recetas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <span>{{ currentTime }}</span>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Búsqueda de Recetas</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-item class ="input-ingredientes">
+    <ion-label class="labelii">Definir Ingredientes</ion-label> <br>
+    <ion-input [(ngModel)]="ingredientToAdd" placeholder="Ejemplo: carrots"></ion-input>
+  </ion-item>
+  <ion-button color="primary" (click)="addIngredient()">Buscar Recetas</ion-button>
+  <ion-button color="danger" (click)="limpiarResultados()">Limpiar Resultados</ion-button>
 
-  <app-explore-container name="Busqueda page"></app-explore-container>
+  <ion-list>
+    <ion-item class="hover-item"  *ngFor="let recipe of recipes" (click)="getRecipeInfo(recipe.id)">
+      <ion-thumbnail slot="start">
+        <img [src]="recipe.image">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ recipe.title }}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-card *ngIf="selectedRecipe">
+    <ion-card-header>
+      <ion-card-title>{{ selectedRecipe.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="selectedRecipe.image" />
+      <p>Ingredientes:</p>
+      <ul>
+        <li *ngFor="let ingredient of selectedRecipe.extendedIngredients">{{ ingredient.original }}</li>
+      </ul>
+      <p>{{ selectedRecipe.instructions }}</p>
+      <a [href]="selectedRecipe.sourceUrl" target="_blank">Ver receta completa</a>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
+
