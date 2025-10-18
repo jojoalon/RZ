@@ -35,6 +35,17 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+@font-face {
+  font-family: 'Dancing Script';
+  src: url('/assets/fonts/DancingScript-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
 
-
-
+@font-face {
+  font-family: 'Dancing Script Custom';
+  /* Ruta corregida según tu indicación */
+  src: url('/assets/fonts/DancingScript-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}

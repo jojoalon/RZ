@@ -1,0 +1,14 @@
+ion-content {
+  /* Combina la imagen con una capa de color semi-transparente */
+  --background:
+    linear-gradient(rgba(255, 255, 255, 0.658), rgba(255, 255, 255, 0.9)), /* Capa de color con transparencia */
+    url("../../../assets/images/Fondo2.png") no-repeat center center / cover; /* Imagen */
+
+  /* El borde se mantiene separado */
+  border: #004a57 solid 1px;
+}
+ion-toolbar {
+  --background: #00221c;
+  color: #f8ffb4;
+  border: #004a57 solid 1px;
+}

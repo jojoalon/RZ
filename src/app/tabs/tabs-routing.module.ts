@@ -20,7 +20,7 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'tab3',
+        path: 'favoritos',
         loadChildren: () =>
           import('./favoritos/favoritos.module').then(
             (m) => m.FavoritosPageModule

@@ -1,77 +1,67 @@
-.imput-ingredientes {
-  margin: 20px;
-  padding: 10px;
-}
+/* Define el color azul oscuro que quieres usar para el texto */
+$dark-blue: #004a57;
 
-.labelii {
-  margin: 1%;
-  --padding-start: 10px;
-  --padding-end: 10px;
-  --padding-top: 8px;
-  --padding-bottom: 8px;
-  font-weight: bold;
-  font-size: 14px;
-  color: #f8ffb4;
-  text-align: center;
-  width: 100%;
-}
-.imputii {
-  margin: 1%;
-  --background: #e0e0e0;
-  --border-radius: 5px;
-  --padding-start: 10px;
-  --padding-end: 10px;
-  --padding-top: 8px;
-  --padding-bottom: 8px;
-  color: rgb(0, 0, 0);
-  ::placeholder {
-    color: rgb(97, 97, 97);
-    opacity: 1;
-  }
-  width: 75%;
-}
-
-.botonagregar {
-  margin: 1%;
-  --background: #c4ffac;
-  --color: rgb(0, 0, 0);
-  --border-radius: 5px;
-  --padding-start: 15px;
-  --padding-end: 15px;
-  --padding-top: 10px;
-  --padding-bottom: 10px;
-}
-.botonlimpiar {
-  margin: 1%;
-  --background: #ff9e9e;
-  --color: rgb(0, 0, 0);
-  --border-radius: 5px;
-  --padding-start: 15px;
-  --padding-end: 15px;
-  --padding-top: 10px;
-  --padding-bottom: 10px;
-}
+/* -------------------------------------------------- */
+/* 1. REGLAS EXISTENTES (FUSIONADAS)                 */
+/* -------------------------------------------------- */
 
 ion-content {
-  --background: url("../../../assets/images/Fondo2.png") no-repeat center center /
-    cover;
-  border: #004a57 solid 1px;
+    /* Mantenemos tu fondo GIF animado y borde */
+    --background: url("../../../assets/images/comidas_fade_lento.gif") no-repeat center center / cover;
+    border: #004a57 solid 1px;
+
+    /* CLAVE DE FUSIÓN: Sobrescribimos el display para centrar */
+    display: flex;
+    justify-content: center; /* Centrado Horizontal */
+    align-items: center;     /* Centrado Vertical */
 }
-ion-item {
-  --background: #002d35;
-  color: white;
-  border: #004a57 solid 1px;
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
+
 ion-toolbar {
-  --background: #00221c;
-  color: #f8ffb4;
-  border: #004a57 solid 1px;
+    /* Mantenemos tus estilos de toolbar */
+    --background: #00221c;
+    --color: #f8ffb4;
+    border: #004a57 solid 1px;
 }
-ion-list {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  /* También asegúrate de que el contenedor de los botones
-       no tenga margen inferior que empuje el ion-list hacia abajo. */
+
+/* -------------------------------------------------- */
+/* 2. ESTILOS DE DISEÑO (ROTACIÓN Y FUENTE)         */
+/* -------------------------------------------------- */
+
+/* Estilo para el título de la barra superior */
+ion-title {
+    /* Aplicamos el color y peso de la nueva fuente */
+    font-family: 'Dancing Script Custom', cursive;
+    color:#f8ffb4 ;/* Cambiamos a azul oscuro para el efecto visual que pediste */
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+
+
+/* Estilos para el mensaje de bienvenida (Centrado y Diagonal) */
+.welcome-message {
+    /* Aplicamos la fuente y color del requisito */
+    font-family: 'Dancing Script Custom', cursive;
+    color: $dark-blue;
+
+    /* Fondo semi-transparente para asegurar la legibilidad sobre el GIF */
+    background-color: rgba(255, 255, 255, 0.9);
+
+    text-align: center;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+
+    /* CLAVE: Rotación en diagonal */
+    transform: rotate(-5deg);
+
+    h2, p {
+        color: $dark-blue;
+        margin: 5px 0;
+        line-height: 1.2;
+    }
+
+    h2 { font-size: 2.5em; }
+    p { font-size: 1.5em; }
 }

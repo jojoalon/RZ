@@ -1,0 +1,96 @@
+/* Aumentamos la clase principal para aplicar Flexbox, si no está ya en el HTML */
+.imput-ingredientes {
+  margin: 20px;
+  padding: 10px;
+
+  /* CLAVE: Aseguramos que el ion-item use Flexbox y alinee los elementos verticalmente */
+  display: flex;
+  align-items: center; /* Centra verticalmente los botones y el input */
+  flex-wrap: wrap; /* Permite que los botones y el input se ajusten en el espacio */
+}
+
+/* -------------------------------------------------- */
+/* CLASES DE BÚSQUEDA Y BOTONES (UNIFORMIDAD DE ALTURA) */
+/* -------------------------------------------------- */
+
+.labelii {
+  margin: 1%;
+  /* Mantenemos tus estilos, pero considera ajustar 'width: 100%'
+     si el elemento debe estar en la misma línea que el input.
+     Si el label está en una línea separada, déjalo. */
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #f8ffb4;
+  text-align: center;
+  width: 100%;
+}
+
+.imputii {
+  margin: 1%;
+  /* El relleno vertical (padding) de 5px es lo que vamos a imitar y expandir en los botones */
+  --background: #e0e0e0;
+  --border-radius: 5px;
+  --padding-start: 5px;
+  --padding-end: 5px;
+  --padding-top: 5px;
+  --padding-bottom: 5px;
+  color: rgb(0, 0, 0);
+  width: 75%; /* Conservamos el ancho */
+
+  ::placeholder {
+    color: rgb(97, 97, 97);
+    opacity: 1;
+  }
+}
+
+.botonagregar,
+.botonlimpiar {
+  margin: 1%;
+
+  /* CLAVE: Ajustamos el relleno del botón para que se acerque
+     a la altura visible total del ion-input. Aumentamos los valores. */
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+
+  /* Aseguramos que el resto del relleno horizontal sea igual al input */
+  --padding-start: 5px;
+  --padding-end: 5px;
+
+  /* Mantenemos tus estilos */
+  --background: #c4ffac;
+  --color: rgb(0, 0, 0);
+  --border-radius: 5px;
+}
+
+.botonlimpiar {
+  --background: #ff9e9e; /* Conservamos el color específico */
+}
+
+/* -------------------------------------------------- */
+/* REGLAS INFERIORES CONSERVADAS                        */
+/* -------------------------------------------------- */
+
+ion-content {
+  --background: url("../../../assets/images/Fondo2.png") no-repeat center center / cover;
+  border: #004a57 solid 1px;
+}
+ion-item {
+  --background: #002d35;
+  color: white;
+  border: #004a57 solid 1px;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+ion-toolbar {
+  --background: #00221c;
+  color: #f8ffb4;
+  border: #004a57 solid 1px;
+}
+ion-list {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
