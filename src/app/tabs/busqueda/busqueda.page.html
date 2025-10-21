@@ -1,32 +1,53 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Busqueda de Recetas</ion-title>
-    <ion-buttons slot="end">
-      <ion-button>
-        <span>{{ currentTime }}</span>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-item class ="input-ingredientes">
+  <ion-item class="input-ingredientes">
     <ion-label class="labelii">Definir Ingredientes</ion-label>
-    <ion-input class="imputii" [(ngModel)]="ingredientToAdd" placeholder="Ejemplo: carrots"></ion-input>
-  <ion-button class="botonagregar" (click)="addIngredient()">Buscar Recetas</ion-button>
-  <ion-button class="botonlimpiar" (click)="limpiarResultados()">Limpiar Resultados</ion-button>
+    <ion-input
+      class="imputii"
+      [(ngModel)]="ingredientToAdd"
+      placeholder="Ejemplo: carrots"
+    ></ion-input>
+
+    <ion-button class="botonagregar" (click)="addIngredient()"
+      >Buscar Recetas</ion-button
+    >
+
+    <ion-button class="botonlimpiar" (click)="limpiarResultados()"
+      >Limpiar Resultados</ion-button
+    >
   </ion-item>
 
-  <ion-list>
-    <ion-item class="hover-item"  *ngFor="let recipe of recipes" (click)="getRecipeInfo(recipe.id)">
+  <hr>
+
+  <ion-list *ngIf="recipes && recipes.length > 0">
+    <ion-item
+      class="hover-item"
+      *ngFor="let recipe of recipes"
+      (click)="getRecipeInfo(recipe.id)"
+    >
       <ion-thumbnail slot="start">
-        <img [src]="recipe.image">
+        <img [src]="recipe.image" />
       </ion-thumbnail>
+
       <ion-label>
         <h2>{{ recipe.title }}</h2>
       </ion-label>
     </ion-item>
   </ion-list>
+
+  <ion-card *ngIf="!searchExecuted && !selectedRecipe" class="mensaje-inicial ion-padding ion-text-center">
+    <ion-card-content>
+      <h2>Que preparamos?...</h2>
+      <p>Ingrese los ingredientes para realizar la búsqueda.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="searchExecuted && recipes.length === 0 && !selectedRecipe" class="mje-no-encontrado ion-padding ion-text-center">
+    <ion-card-content>
+      <h2>Lo lamento</h2>
+      <p>No se encontraron recetas con ese ingrediente.</p>
+      <p>Intente con otro ingrediente o revise si está bien escrito.</p>
+    </ion-card-content>
+  </ion-card>
 
   <ion-card *ngIf="selectedRecipe">
     <ion-card-header>
@@ -34,14 +55,26 @@
     </ion-card-header>
     <ion-card-content>
       <img [src]="selectedRecipe.image" />
+
+      <ion-button
+        expand="block"
+        color="tertiary"
+        (click)="agregarAFavoritos()"
+        class="ion-margin-vertical"
+      >
+        <ion-icon slot="start" name="heart"></ion-icon>
+        Agregar a Favoritos
+      </ion-button>
+
       <p>Ingredientes:</p>
       <ul>
-        <li *ngFor="let ingredient of selectedRecipe.extendedIngredients">{{ ingredient.original }}</li>
+        <li *ngFor="let ingredient of selectedRecipe.extendedIngredients">
+          {{ ingredient.original }}
+        </li>
       </ul>
-      <p>{{ selectedRecipe.instructions }}</p>
-      <a [href]="selectedRecipe.sourceUrl" target="_blank">Ver receta completa</a>
-    </ion-card-content>
+
+      <p [innerHTML]="selectedRecipe.instructions"></p>
+
+      </ion-card-content>
   </ion-card>
-
 </ion-content>
-

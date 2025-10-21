@@ -1,17 +1,61 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-Recetas Favoritas
-    </ion-title>
+    <ion-title> Recetas Favoritas </ion-title>
   </ion-toolbar>
 </ion-header>
 
- <ion-content [fullscreen]="true">
-  <!-- <ion-header>
-    <ion-toolbar>
-      <ion-title size="large">Recetas Favoritas</ion-title>
-    </ion-toolbar>
-  </ion-header> -->
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <!-- Muestra un mensaje si la lista está vacía -->
+    <ion-item *ngIf="!recetasService.recetas || recetasService.recetas.length === 0">
+      <ion-label class="ion-text-center ion-padding">
+        Aún no tienes recetas favoritas guardadas.
+      </ion-label>
+    </ion-item>
 
-  <!-- <app-explore-container name="Favoritos page"></app-explore-container>  -->
+    <!-- Lista de recetas favoritas (con deslizar para eliminar) -->
+    <ion-item-sliding *ngFor="let recetaItem of recetasService.recetas">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img [src]="recetaItem.image" />
+        </ion-thumbnail>
+
+        <ion-label>
+          <h2>{{ recetaItem.title }}</h2>
+          <!-- Quitamos el "Toca para ver el detalle" para no confundir con el botón -->
+        </ion-label>
+
+        <!-- Botón para Ver Detalle (usando tu imagen iconopdf.png) -->
+        <ion-button
+          slot="end"
+          color="primary"
+          fill="clear"
+          (click)="verDetalleGuardado(recetaItem)"
+          class="ion-no-padding"
+        >
+          <!-- Se usa la imagen local: assets/icon/iconopdf.png (REVERTIDO) -->
+          <img src="assets/icon/iconopdf.png" alt="Ver Receta" style="width: 28px; height: 28px;"/>
+        </ion-button>
+      </ion-item>
+
+      <!-- Botón de Deslizar para Eliminar -->
+      <ion-item-options side="end">
+        <!-- El click llama a eliminarReceta(), que ahora pide confirmación en el TS -->
+        <ion-item-option color="danger" (click)="eliminarReceta(recetaItem.id)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <!-- Texto de ayuda para la función de deslizar -->
+  <p *ngIf="recetasService.recetas.length > 0" class="ion-text-center ion-padding-top ion-text-sm">
+    <!-- <ion-icon name="arrow-back-outline"></ion-icon> Desliza un elemento hacia la izquierda para **Eliminar** de favoritos. -->
+  </p>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center bonappetit">¡Bon appetit!</ion-title>
+  </ion-toolbar>
+</ion-footer>

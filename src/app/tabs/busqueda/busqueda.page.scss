@@ -1,6 +1,6 @@
 /* Aumentamos la clase principal para aplicar Flexbox, si no está ya en el HTML */
 .imput-ingredientes {
-  margin: 20px;
+  margin: 1%;
   padding: 10px;
 
   /* CLAVE: Aseguramos que el ion-item use Flexbox y alinee los elementos verticalmente */
@@ -20,10 +20,10 @@
      Si el label está en una línea separada, déjalo. */
   --padding-start: 10px;
   --padding-end: 10px;
-  --padding-top: 8px;
-  --padding-bottom: 8px;
+  --padding-top: 5px;
+  --padding-bottom: 5px;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
   color: #f8ffb4;
   text-align: center;
   width: 100%;
@@ -53,8 +53,8 @@
 
   /* CLAVE: Ajustamos el relleno del botón para que se acerque
      a la altura visible total del ion-input. Aumentamos los valores. */
-  --padding-top: 10px;
-  --padding-bottom: 10px;
+  --padding-top: 5px;
+  --padding-bottom: 5px;
 
   /* Aseguramos que el resto del relleno horizontal sea igual al input */
   --padding-start: 5px;
@@ -75,7 +75,8 @@
 /* -------------------------------------------------- */
 
 ion-content {
-  --background: url("../../../assets/images/Fondo2.png") no-repeat center center / cover;
+  --background: url("../../../assets/images/Fondo2.png") no-repeat center center /
+    cover;
   border: #004a57 solid 1px;
 }
 ion-item {
@@ -93,4 +94,63 @@ ion-toolbar {
 ion-list {
   margin-top: 0 !important;
   padding-top: 0 !important;
+}
+
+.mensaje-inicial {
+  position: absolute;
+  --background: rgba(166, 235, 148, 0.8);
+  color: #004a57;
+  font-family: "Dancing Script Custom", cursive;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); //rotate(-5deg);
+  text-align: center;
+  padding: 10px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px 10px rgba(0, 0, 0, 0.7);
+
+  h2 {
+    font-size: 1.7em;
+    color: #003038;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 1.3em;
+    color: #003038;
+    margin-top: 0;
+  }
+}
+
+
+.mje-no-encontrado {
+  position: absolute;
+  --background: rgba(255, 255, 255, 0.8);
+  color: #004a57;
+  font-family: "Dancing Script Custom", cursive;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); //rotate(-5deg);
+  text-align: center;
+  padding: 10px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px 10px rgba(0, 0, 0, 0.7);
+
+  h2 {
+    font-size: 1.7em;
+    color: #003038;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 1.3em;
+    color: #003038;
+    margin-top: 0;
+  }
 }

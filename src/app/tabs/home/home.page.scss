@@ -1,67 +1,68 @@
-/* Define el color azul oscuro que quieres usar para el texto */
-$dark-blue: #004a57;
 
 /* -------------------------------------------------- */
 /* 1. REGLAS EXISTENTES (FUSIONADAS)                 */
 /* -------------------------------------------------- */
 
 ion-content {
-    /* Mantenemos tu fondo GIF animado y borde */
-    --background: url("../../../assets/images/comidas_fade_lento.gif") no-repeat center center / cover;
-    border: #004a57 solid 1px;
+  /* Mantenemos tu fondo GIF animado y borde */
+  --background: url("../../../assets/images/comidas_fade_lento.gif") no-repeat
+    center center / cover;
+  border: #004a57 solid 1px;
 
-    /* CLAVE DE FUSIÓN: Sobrescribimos el display para centrar */
-    display: flex;
-    justify-content: center; /* Centrado Horizontal */
-    align-items: center;     /* Centrado Vertical */
+  /* CLAVE DE FUSIÓN: Sobrescribimos el display para centrar */
+  display: flex;
+  justify-content: center; /* Centrado Horizontal */
+  align-items: center; /* Centrado Vertical */
 }
 
 ion-toolbar {
-    /* Mantenemos tus estilos de toolbar */
-    --background: #00221c;
-    --color: #f8ffb4;
-    border: #004a57 solid 1px;
+  /* Mantenemos tus estilos de toolbar */
+  --background: #00221c;
+  --color: #f8ffb4;
+  border: #004a57 solid 1px;
 }
-
-/* -------------------------------------------------- */
-/* 2. ESTILOS DE DISEÑO (ROTACIÓN Y FUENTE)         */
-/* -------------------------------------------------- */
 
 /* Estilo para el título de la barra superior */
 ion-title {
-    /* Aplicamos el color y peso de la nueva fuente */
-    font-family: 'Dancing Script Custom', cursive;
-    color:#f8ffb4 ;/* Cambiamos a azul oscuro para el efecto visual que pediste */
-    font-weight: bold;
-    font-size: 3.5rem;
+  /* Aplicamos el color y peso de la nueva fuente */
+  font-family: "Dancing Script Custom", cursive;
+  color: #f8ffb4; /* Cambiamos a azul oscuro para el efecto visual que pediste */
+  font-weight: bold;
+  font-size: 3.5rem;
 }
 
-
-/* Estilos para el mensaje de bienvenida (Centrado y Diagonal) */
 .welcome-message {
-    /* Aplicamos la fuente y color del requisito */
-    font-family: 'Dancing Script Custom', cursive;
-    color: $dark-blue;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-family: "Dancing Script Custom", cursive;
+  color: #004a57;;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+  text-align: center;
+  padding: 10px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px 10px rgba(0, 0, 0, 0.7);
 
-    /* Fondo semi-transparente para asegurar la legibilidad sobre el GIF */
-    background-color: rgba(255, 255, 255, 0.9);
+  h2,  p {
+    color: #004a57;
+    margin: 5px 0;
+    line-height: 1.2;
+  }
 
-    text-align: center;
-    padding: 30px;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 20px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  h2 {
+    font-size: 1.8em;
+  }
+  p {
+    font-size: 1.2em;
+  }
+}
+.subtitulo{
+    /* Reduce el tamaño de la letra al 70% del tamaño base */
+    font-size: 0.7em;
 
-    /* CLAVE: Rotación en diagonal */
-    transform: rotate(-5deg);
-
-    h2, p {
-        color: $dark-blue;
-        margin: 5px 0;
-        line-height: 1.2;
-    }
-
-    h2 { font-size: 2.5em; }
-    p { font-size: 1.5em; }
+    /* Agrega un pequeño margen para separar el texto "R Z" */
+    margin-left: 75px;
 }
