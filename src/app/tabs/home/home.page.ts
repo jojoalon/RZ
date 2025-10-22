@@ -56,9 +56,4 @@ export class HomePage implements OnInit {
     }, 1000);
   }
 
-  // signOut(){
-  //   this.firebaseSvc.signOut();
-  // }
-
-
 }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FirebaseService } from 'src/app/services/firebase.service'; // Asegúrate de la ruta
+
 
 @Component({
   selector: 'app-tabs',
@@ -8,6 +10,11 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  constructor(
+    private firebaseSvc: FirebaseService
+  ) {}
+    async processLogout() {
+    await this.firebaseSvc.processLogout();
+  }
 
 }

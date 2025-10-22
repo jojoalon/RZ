@@ -1,32 +1,24 @@
 
-/* -------------------------------------------------- */
-/* 1. REGLAS EXISTENTES (FUSIONADAS)                 */
-/* -------------------------------------------------- */
 
 ion-content {
-  /* Mantenemos tu fondo GIF animado y borde */
   --background: url("../../../assets/images/comidas_fade_lento.gif") no-repeat
     center center / cover;
   border: #004a57 solid 1px;
 
-  /* CLAVE DE FUSIÓN: Sobrescribimos el display para centrar */
   display: flex;
-  justify-content: center; /* Centrado Horizontal */
-  align-items: center; /* Centrado Vertical */
+  justify-content: center;
+  align-items: center;
 }
 
 ion-toolbar {
-  /* Mantenemos tus estilos de toolbar */
   --background: #00221c;
   --color: #f8ffb4;
   border: #004a57 solid 1px;
 }
 
-/* Estilo para el título de la barra superior */
 ion-title {
-  /* Aplicamos el color y peso de la nueva fuente */
   font-family: "Dancing Script Custom", cursive;
-  color: #f8ffb4; /* Cambiamos a azul oscuro para el efecto visual que pediste */
+  color: #f8ffb4;
   font-weight: bold;
   font-size: 3.5rem;
 }
@@ -60,9 +52,10 @@ ion-title {
   }
 }
 .subtitulo{
-    /* Reduce el tamaño de la letra al 70% del tamaño base */
     font-size: 0.7em;
 
-    /* Agrega un pequeño margen para separar el texto "R Z" */
-    margin-left: 75px;
+    margin-left: 50px;
+}
+.reloj{
+  color: yellow;
 }

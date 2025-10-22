@@ -1,17 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <!-- Botón para volver usando la funcionalidad de back button de Ionic -->
     <ion-buttons slot="start">
-      <!-- El defaultHref es la ruta de respaldo si se accede directamente -->
       <ion-back-button defaultHref="/tabs/favoritos"></ion-back-button>
     </ion-buttons>
     <ion-title>Detalle de Receta Guardada</ion-title>
+      <ion-button
+          slot="end" color="secondary" fill="clear" (click)="recetasService.descargarPDF(recetaPdf)"
+          class="ion-no-padding boton-pdf" > <span class="labelpdf">Descargar PDF</span>
+          <img src="assets/icon/iconopdf.png" alt="Descargar PDF">
+          </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
 
-  <!-- Mensaje de error si la receta no se cargó correctamente (ej. si se refresca la página) -->
   <ion-card *ngIf="!receta" class="ion-text-center">
     <ion-card-content>
       <ion-icon name="alert-circle-outline" size="large" color="danger"></ion-icon>
@@ -20,7 +22,6 @@
     </ion-card-content>
   </ion-card>
 
-  <!-- Contenido de la Receta (solo si 'receta' tiene datos) -->
   <ion-card *ngIf="receta">
     <ion-card-header>
       <ion-card-title class="ion-text-wrap">{{ receta.title }}</ion-card-title>
@@ -34,7 +35,6 @@
         <ion-label color="dark">Ingredientes:</ion-label>
       </ion-list-header>
       <ul>
-        <!-- El array 'extendedIngredients' viene en el objeto de la receta completa -->
         <li *ngFor="let ingredient of receta.extendedIngredients">
           {{ ingredient.original }}
         </li>
@@ -44,12 +44,9 @@
         <ion-label color="dark">Instrucciones:</ion-label>
       </ion-list-header>
 
-      <!-- Usamos [innerHTML] para renderizar las instrucciones que Spoonacular devuelve con formato HTML -->
       <div [innerHTML]="receta.instructions" class="ion-padding-top instructions-text"></div>
 
-      <!-- Opcional: Link a la fuente original -->
       <p *ngIf="receta.sourceUrl" class="ion-padding-top">
-        <!-- <a [href]="receta.sourceUrl" target="_blank">Ver fuente original</a> -->
       </p>
 
     </ion-card-content>

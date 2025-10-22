@@ -27,11 +27,6 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'logout',
-        loadChildren: () =>
-          import('./logout/logout.module').then((m) => m.LogoutPageModule),
-      },
-      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',

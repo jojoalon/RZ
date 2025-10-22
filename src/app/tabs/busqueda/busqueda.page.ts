@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { UtilsService } from 'src/app/services/utils.service';
 import { RecetasService } from 'src/app/services/recetas.service';
-import { ToastController } from '@ionic/angular'; // 👈 1. Importar ToastController
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-busqueda',
@@ -13,7 +13,6 @@ import { ToastController } from '@ionic/angular'; // 👈 1. Importar ToastContr
 export class BusquedaPage implements OnInit {
   firebaseSvc = inject(FirebaseService);
   utilsSvc = inject(UtilsService);
-  // 👈 2. Inyectar ToastController
   toastController = inject(ToastController);
 
   ingredientToAdd: string = '';
@@ -83,26 +82,16 @@ export class BusquedaPage implements OnInit {
     this.searchExecuted = false;
   }
 
-  // ==========================================================
-  // 3. NUEVO MÉTODO PARA GUARDAR LA RECETA EN FAVORITOS
-  // ==========================================================
 
-  /**
-   * Llama al servicio para agregar la receta actualmente seleccionada
-   * a la lista de favoritos y la guarda en el localStorage.
-   */
   agregarAFavoritos() {
     if (this.selectedRecipe) {
-      // Usamos el método implementado en RecetasService
       this.recetasService.agregarRecetaAFavoritos(this.selectedRecipe);
 
-      // Muestra una notificación al usuario
       this.mostrarToast('¡Receta agregada a tus favoritos! ❤️');
     }
   }
 
   /**
-   * Método auxiliar para mostrar una notificación.
    * @param mensaje El texto a mostrar.
    */
   async mostrarToast(mensaje: string) {

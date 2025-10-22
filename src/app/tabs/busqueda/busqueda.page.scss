@@ -1,23 +1,15 @@
-/* Aumentamos la clase principal para aplicar Flexbox, si no está ya en el HTML */
 .imput-ingredientes {
   margin: 1%;
   padding: 10px;
 
-  /* CLAVE: Aseguramos que el ion-item use Flexbox y alinee los elementos verticalmente */
   display: flex;
-  align-items: center; /* Centra verticalmente los botones y el input */
-  flex-wrap: wrap; /* Permite que los botones y el input se ajusten en el espacio */
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-/* -------------------------------------------------- */
-/* CLASES DE BÚSQUEDA Y BOTONES (UNIFORMIDAD DE ALTURA) */
-/* -------------------------------------------------- */
 
 .labelii {
   margin: 1%;
-  /* Mantenemos tus estilos, pero considera ajustar 'width: 100%'
-     si el elemento debe estar en la misma línea que el input.
-     Si el label está en una línea separada, déjalo. */
   --padding-start: 10px;
   --padding-end: 10px;
   --padding-top: 5px;
@@ -31,7 +23,6 @@
 
 .imputii {
   margin: 1%;
-  /* El relleno vertical (padding) de 5px es lo que vamos a imitar y expandir en los botones */
   --background: #e0e0e0;
   --border-radius: 5px;
   --padding-start: 5px;
@@ -39,7 +30,7 @@
   --padding-top: 5px;
   --padding-bottom: 5px;
   color: rgb(0, 0, 0);
-  width: 75%; /* Conservamos el ancho */
+  width: 75%;
 
   ::placeholder {
     color: rgb(97, 97, 97);
@@ -50,29 +41,19 @@
 .botonagregar,
 .botonlimpiar {
   margin: 1%;
-
-  /* CLAVE: Ajustamos el relleno del botón para que se acerque
-     a la altura visible total del ion-input. Aumentamos los valores. */
   --padding-top: 5px;
   --padding-bottom: 5px;
-
-  /* Aseguramos que el resto del relleno horizontal sea igual al input */
   --padding-start: 5px;
   --padding-end: 5px;
-
-  /* Mantenemos tus estilos */
   --background: #c4ffac;
   --color: rgb(0, 0, 0);
   --border-radius: 5px;
 }
 
 .botonlimpiar {
-  --background: #ff9e9e; /* Conservamos el color específico */
+  --background: #ff9e9e;
 }
 
-/* -------------------------------------------------- */
-/* REGLAS INFERIORES CONSERVADAS                        */
-/* -------------------------------------------------- */
 
 ion-content {
   --background: url("../../../assets/images/Fondo2.png") no-repeat center center /
@@ -103,7 +84,7 @@ ion-list {
   font-family: "Dancing Script Custom", cursive;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); //rotate(-5deg);
+  transform: translate(-50%, -50%);
   text-align: center;
   padding: 10px;
   width: 80%;
@@ -133,7 +114,7 @@ ion-list {
   font-family: "Dancing Script Custom", cursive;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); //rotate(-5deg);
+  transform: translate(-50%, -50%); 
   text-align: center;
   padding: 10px;
   width: 80%;

@@ -22,8 +22,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./tabs/tabs.module').then((m) => m.TabsPageModule),
   },
-  // 🎯 RUTA CORREGIDA: Apunta directamente a la carpeta, ya que está
-  // en src/app/receta-detalle-guardada (no dentro de 'pages').
+
   {
     path: 'receta-detalle-guardada',
     loadChildren: () =>
